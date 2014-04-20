@@ -1,0 +1,14 @@
+<project name="Sample usage of Salesforce Ant tasks" default="deployCode" basedir="." xmlns:sf="antlib:com.salesforce">
+ <property file="build.properties"/>
+ <property environment="env"/> 
+ <target name="deployCode">      
+    <sf:deploy username="${sf.username}" 
+    password="${sf.password}" 
+    serverurl="${sf.serverurl}" 
+    deployRoot="Src"
+    runAllTests="True" 
+    logType="Debugonly"
+    rollbackOnError="true" maxPoll="100" pollWaitMillis="10000" > 
+</sf:deploy> 
+ </target>
+ </project>
