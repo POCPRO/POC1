@@ -1,0 +1,17 @@
+<project name="Sample usage of Salesforce Ant tasks" default="deployment" basedir="." xmlns:sf="antlib:com.salesforce">
+
+    <property file="build.properties"/>
+    <property environment="env"/>
+
+    <target name="deployment">
+      <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}"  deployRoot="mypkg" checkOnly="true"/>
+    </target>
+	<target name="proxy">
+			<property name="proxy.host" value="proxy.msat" />
+			<property name="proxy.port" value="80" />
+			<property name="proxy.user" value="msat\SM00343550" />
+			<property name="proxy.pwd" value="mmss21@84" />
+			<setproxy proxyhost="${proxy.host}" proxyport="${proxy.port}" proxyuser="${proxy.user}" proxypassword="${proxy.pwd}" />
+		</target>
+
+</project>
